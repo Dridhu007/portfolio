@@ -327,7 +327,7 @@
   }
 
   /* ============================================
-     GLASS CARD (shared)
+     GLASS CARD
      ============================================ */
   .glass {
     background: var(--bg-raised);
@@ -382,7 +382,7 @@
   }
 
   /* ============================================
-     TECHNICAL STACK — glass cards
+     TECHNICAL STACK
      ============================================ */
   .skills-grid {
     display: grid;
@@ -432,7 +432,7 @@
   }
 
   /* ============================================
-     EXPERIENCE — timeline
+     EXPERIENCE
      ============================================ */
   .timeline {
     position: relative;
@@ -506,7 +506,7 @@
     padding: 26px;
     display: flex;
     flex-direction: column;
-    min-height: 200px;
+    min-height: 220px;
     text-decoration: none;
     color: var(--ink);
   }
@@ -565,6 +565,17 @@
     font-size: 13px;
     font-family: var(--font-mono);
     color: var(--emerald);
+    flex-wrap: wrap;
+  }
+
+  .project-links a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .project-links a:hover {
+    color: var(--cyan);
+    text-decoration: underline;
   }
 
   .project-tags {
@@ -583,10 +594,10 @@
     padding: 4px 9px;
   }
 
-  /* Currently building */
+  /* In Development */
   .building-strip {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
   }
 
@@ -595,6 +606,8 @@
     border-radius: 12px;
     padding: 26px;
     background: rgba(6,182,212,0.03);
+    display: flex;
+    flex-direction: column;
   }
 
   .building-card .project-name { font-size: 18px; margin-top: 12px; }
@@ -685,9 +698,6 @@
     gap: 10px;
   }
 
-  /* ============================================
-     RESPONSIVE / A11Y
-     ============================================ */
   @media (max-width: 640px) {
     header.hero { padding: 76px 0 56px; }
     .section { padding: 56px 0; }
@@ -754,9 +764,7 @@
       </div>
     </header>
 
-    <!-- ============================================
-         ABOUT
-         ============================================ -->
+    <!-- ABOUT -->
     <section class="section" id="about">
       <div class="wrap">
         <div class="section-head reveal">
@@ -779,16 +787,14 @@
             <div class="fact"><span class="fact-label">LOCATION</span><span class="fact-value">Ernakulam, Kerala, India</span></div>
             <div class="fact"><span class="fact-label">EDUCATION</span><span class="fact-value">MCA, UC College (2023–2025)</span></div>
             <div class="fact"><span class="fact-label">FOCUS</span><span class="fact-value">Agentic AI, Data Engineering, Full-Stack</span></div>
-            <div class="fact"><span class="fact-label">RECENTLY SHIPPED</span><span class="fact-value">Graph DB benchmark suite</span></div>
+            <div class="fact"><span class="fact-label">RECENTLY SHIPPED</span><span class="fact-value">WorkOS v2 &amp; Graph Suite</span></div>
             <div class="fact"><span class="fact-label">STATUS</span><span class="fact-value">Open to early-career roles</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================
-         TECHNICAL STACK
-         ============================================ -->
+    <!-- TECHNICAL STACK -->
     <section class="section" id="stack">
       <div class="wrap">
         <div class="section-head reveal">
@@ -801,8 +807,8 @@
             <div class="skills-list">
               <span class="skill-tag">Agentic AI</span>
               <span class="skill-tag">LLM Integration</span>
+              <span class="skill-tag">Claude / Gemini / ChatGPT</span>
               <span class="skill-tag">Prompt Engineering</span>
-              <span class="skill-tag">Gemini API</span>
               <span class="skill-tag">Hugging Face</span>
             </div>
           </div>
@@ -840,9 +846,7 @@
       </div>
     </section>
 
-    <!-- ============================================
-         EXPERIENCE & CREDENTIALS
-         ============================================ -->
+    <!-- EXPERIENCE -->
     <section class="section" id="experience">
       <div class="wrap">
         <div class="section-head reveal">
@@ -875,9 +879,7 @@
       </div>
     </section>
 
-    <!-- ============================================
-         PROJECTS
-         ============================================ -->
+    <!-- PROJECTS -->
     <section class="section" id="projects">
       <div class="wrap">
         <div class="section-head reveal">
@@ -887,78 +889,101 @@
         </div>
         <div class="project-grid">
 
-          <a class="glass project-card reveal d1" href="https://github.com/Dridhu007/coding-agent" target="_blank" rel="noopener">
+          <!-- WorkOS v2 with Zipping Proposal link -->
+          <div class="glass project-card reveal d1">
+            <div class="project-top">
+              <span class="project-status">Shipped</span>
+            </div>
+            <span class="project-name">WorkOS v2</span>
+            <span class="project-desc">A modular agent orchestration and task execution engine designed for automated workflows, context-aware dispatching, and dynamic project packaging with built-in asset zipping.</span>
+            <div class="project-links">
+              <a href="https://github.com/Dridhu007/workos-v2" target="_blank" rel="noopener">GitHub Repo →</a>
+              <a href="https://github.com/Dridhu007/workos-v2#zipping-proposal" target="_blank" rel="noopener">Zipping Proposal →</a>
+            </div>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Workflow Automation</span>
+              <span class="project-tag">Orchestration</span>
+              <span class="project-tag">Packaging</span>
+            </div>
+          </div>
+
+          <a class="glass project-card reveal d2" href="https://github.com/Dridhu007/coding-agent" target="_blank" rel="noopener">
             <div class="project-top">
               <span class="project-status">Shipped</span>
             </div>
             <span class="project-name">AI Coding Agent</span>
             <span class="project-desc">A Gemini-powered coding assistant that reads, edits, and generates code from natural-language instructions — built to act on an existing codebase rather than just answer questions in isolation.</span>
-            <span class="project-tags">
+            <div class="project-links">
+              <span>View on GitHub →</span>
+            </div>
+            <div class="project-tags">
               <span class="project-tag">Python</span>
               <span class="project-tag">Gemini API</span>
-            </span>
-            <span class="project-links">View on GitHub →</span>
+            </div>
           </a>
 
-          <a class="glass project-card reveal d2" href="https://github.com/Dridhu007/expense-splitter" target="_blank" rel="noopener">
+          <a class="glass project-card reveal d3" href="https://github.com/Dridhu007/expense-splitter" target="_blank" rel="noopener">
             <div class="project-top">
               <span class="project-status">Shipped</span>
             </div>
             <span class="project-name">Splitwise-Style Expense Splitter</span>
             <span class="project-desc">A full-stack group expense tracker with a multi-page frontend, session-based auth, and automatic settle-up calculations — Node.js/Express backend, SQLite storage, bcrypt password hashing.</span>
-            <span class="project-tags">
+            <div class="project-links">
+              <span>View on GitHub →</span>
+            </div>
+            <div class="project-tags">
               <span class="project-tag">Node.js</span>
               <span class="project-tag">Express</span>
               <span class="project-tag">SQLite</span>
-            </span>
-            <span class="project-links">View on GitHub →</span>
+            </div>
           </a>
 
-          <a class="glass project-card reveal d3" href="https://github.com/Dridhu007/file-organizer-agent" target="_blank" rel="noopener">
+          <a class="glass project-card reveal d4" href="https://github.com/Dridhu007/file-organizer-agent" target="_blank" rel="noopener">
             <div class="project-top">
               <span class="project-status">Shipped</span>
             </div>
             <span class="project-name">File Organizer Agent</span>
             <span class="project-desc">A Python automation agent that watches a target folder and sorts incoming files into categorized directories by type in real time.</span>
-            <span class="project-tags">
+            <div class="project-links">
+              <span>View on GitHub →</span>
+            </div>
+            <div class="project-tags">
               <span class="project-tag">Python</span>
               <span class="project-tag">Automation</span>
-            </span>
-            <span class="project-links">View on GitHub →</span>
-          </a>
-
-          <div class="glass project-card reveal d4">
-            <div class="project-top">
-              <span class="project-status">Shipped</span>
             </div>
-            <span class="project-name">Graph Database Benchmark Suite</span>
-            <span class="project-desc">A Python benchmarking framework comparing CognoDB Cloud against Neo4j AuraDB, Memgraph Cloud, FalkorDB Cloud, and Kuzu on the SNAP soc-Pokec social graph dataset — measuring query performance, load time, and scalability across ~150k relationships.</span>
-            <span class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Graph Databases</span>
-              <span class="project-tag">Cypher</span>
-            </span>
-          </div>
+          </a>
 
           <div class="glass project-card reveal d1">
             <div class="project-top">
               <span class="project-status">Shipped</span>
             </div>
+            <span class="project-name">Graph Database Benchmark Suite</span>
+            <span class="project-desc">A Python benchmarking framework comparing CognoDB Cloud against Neo4j AuraDB, Memgraph Cloud, FalkorDB Cloud, and Kuzu on the SNAP soc-Pokec social graph dataset — measuring query performance, load time, and scalability across ~150k relationships.</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Graph Databases</span>
+              <span class="project-tag">Cypher</span>
+            </div>
+          </div>
+
+          <div class="glass project-card reveal d2">
+            <div class="project-top">
+              <span class="project-status">Shipped</span>
+            </div>
             <span class="project-name">Design Agent</span>
             <span class="project-desc">An AI-assisted design tool that generates and refines UI/visual assets from natural-language briefs, aimed at speeding up the early concept-to-mockup stage of a project.</span>
-            <span class="project-tags">
+            <div class="project-tags">
               <span class="project-tag">Python</span>
               <span class="project-tag">AI Tooling</span>
-            </span>
+            </div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- ============================================
-         CURRENTLY BUILDING
-         ============================================ -->
+    <!-- IN DEVELOPMENT -->
     <section class="section" id="building">
       <div class="wrap">
         <div class="section-head reveal">
@@ -966,32 +991,39 @@
           <h2 class="section-title">Currently building</h2>
         </div>
         <div class="building-strip">
+
+          <!-- Automated Job Finding Agent -->
           <div class="glass building-card reveal d1">
             <span class="project-status progress">In development</span>
-            <div class="project-name">LifeOS Hub</div>
-            <span class="project-desc">A personal life-management hub for organizing tasks, habits, and daily routines in one place, built in TypeScript and deployed on Replit as an evolving personal productivity system.</span>
-            <span class="project-tags">
-              <span class="project-tag">TypeScript</span>
-            </span>
+            <div class="project-name">Automated Job Finding Agent</div>
+            <span class="project-desc">An autonomous agent system configured to scrape job boards, parse unstructured role descriptions, match qualification heuristics against candidate profiles, and organize application pipelines.</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Autonomous Agent</span>
+              <span class="project-tag">Scraping</span>
+              <span class="project-tag">Pipeline</span>
+            </div>
           </div>
 
+          <!-- Jarvis AI Assistant with Tri-Brain Model -->
           <div class="glass building-card reveal d2">
             <span class="project-status progress">In development</span>
-            <div class="project-name">AI Voice Assistant</div>
-            <span class="project-desc">A voice-activated AI assistant with wake-word detection, web search, and device control — an exploration of speech interfaces and agentic tool use.</span>
-            <span class="project-tags">
-              <span class="project-tag">Python</span>
+            <div class="project-name">Jarvis AI (Voice Assistant)</div>
+            <span class="project-desc">A unified multi-agent voice assistant operating via tri-model collaboration: Gemini manages real-time multimodal sensory streaming, Claude oversees deep reasoning and architecture, and ChatGPT executes deterministic tool calling.</span>
+            <div class="project-tags">
+              <span class="project-tag">Claude</span>
+              <span class="project-tag">Gemini</span>
+              <span class="project-tag">ChatGPT</span>
               <span class="project-tag">Voice AI</span>
-            </span>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============================================
-       CONTACT
-       ============================================ -->
+  <!-- CONTACT -->
   <footer class="section" id="contact">
     <div class="wrap">
       <div class="contact-inner reveal">
@@ -1036,7 +1068,6 @@
       });
     }
 
-    // Cursor-follow glow
     const glow = document.getElementById('bgGlow');
     window.addEventListener('mousemove', function (e) {
       const xPct = (e.clientX / window.innerWidth) * 100;
@@ -1045,7 +1076,6 @@
       document.documentElement.style.setProperty('--my', yPct + '%');
     });
 
-    // Scroll-reveal via IntersectionObserver
     const revealEls = document.querySelectorAll('.reveal:not(.in-view)');
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver(function (entries) {
